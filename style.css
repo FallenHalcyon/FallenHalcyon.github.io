@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    font-size: 32px;
+    background-color: black;
+    color: white;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+input {
+    width: 100px;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+button {
+    font-size: 32px;
+}
+#result {
+    margin-top: 20px;
+    font-size: 32px;
+}
+.fasz {
+    display: flex;
+    margin-bottom: 20px;
+}

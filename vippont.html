@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>vip</title>
+    
+</head>
+<body>
+    <p><a href=index.html>vissza</a></p>
+    <div class="fasz">
+        <label for="haz">haz slot (2,000 VIP)</label>
+        <input type="number" id="haz" min="0" max="15" value="0">
+    </div>
+    <div class="fasz">
+        <label for="j">jarmu slot (1,500 VIP)</label>
+        <input type="number" id="j" min="0" max="16" value="0">
+    </div>
+    <div class="fasz">
+        <label for="kieg">kiegeszito slot (500 VIP)</label>
+        <input type="number" id="kieg" min="0" max="15" value="0">
+    </div>
+    <div class="fasz">
+        <label for="vezet">vezetesi keszseg (750 VIP)</label>
+        <input type="number" id="vezet" min="0" max="20" value="0">
+    </div>
+    <div class="fasz">
+        <label for="graf">graffiti slot (250 VIP)</label>
+        <input type="number" id="graf" min="0" max="30" value="0">
+    </div>
+    <div class="fasz">
+        <label for="lada">VIP lada slot (10,000 VIP)</label>
+        <input type="number" id="lada" min="0" max="3" value="0">
+    </div>
+    <!-- 15 16 15 20 30 3 // 2000 1500 500 750 250 10000 -->
+    <button onclick="VIP()">szamolas</button>
+    <div id="eredmeny"></div>
+
+    <script>
+        function VIP() {
+            var haz = parseInt(document.getElementById('haz').value);
+            var j = parseInt(document.getElementById('j').value);
+            var kieg = parseInt(document.getElementById('kieg').value);
+            var vezet = parseInt(document.getElementById('vezet').value);
+            var graf = parseInt(document.getElementById('graf').value);
+            var lada = parseInt(document.getElementById('lada').value);
+
+            var vip = (15*2000-haz*2000)+(16*1500-j*1500)+(15*500-kieg*500)+(20*750-vezet*750)+(30*250-graf*250);
+            var ladaslotok = 3*10000-lada*10000;
+
+            document.getElementById('eredmeny').textContent = "VIP pont: " + vip.toLocaleString() + " + " + ladaslotok.toLocaleString();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>xp</title>
+
+</head>
+<body>
+    <p><a href=index.html>vissza</a></p>
+    <div>
+        <label for="lvl">jelenlegi szint:</label>
+        <input type="number" id="lvl" min="1" max="200" value="1">
+    </div>
+    <div>
+        <label for="elert">xp elerve eddig:</label>
+        <input type="number" id="elert" min="0" value="0">
+    </div>
+    <div>
+        <label for="cel">cel szint:</label>
+        <input type="number" id="cel" min="1" max="200" value="200">
+    </div>
+    <button onclick="XP()">szamolas</button>
+    <div id="eredmeny"></div>
+
+    <script>
+        function XP() {
+            var lvl = parseInt(document.getElementById('lvl').value);
+            var elert = parseInt(document.getElementById('elert').value);
+            var cel = parseInt(document.getElementById('cel').value);
+            var total = 0;
+
+            while (lvl !== cel) {
+                var xp = lvl * 150;
+                total += xp;
+                lvl++;
+            }
+
+            var e = total - elert;
+            document.getElementById('eredmeny').textContent = "xp: " + e.toLocaleString();
+        }
+    </script>
+</body>
+</html>
